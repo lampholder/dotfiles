@@ -106,3 +106,5 @@ alias ..='cd ..'
 alias h=history
 
 export LANG=en_US.utf-8
+
+alias python="python -B"
