@@ -1,24 +1,25 @@
 " === PLUGIN MANAGEMENT ===================================================
 execute pathogen#infect()
+filetype plugin indent on
 
-" === APPEARANCE ==========================================================
-
+" Appearance {{{
 " Cosmetics {
-set background=dark
-set t_Co=16 " needed for Ubuntu
+" Needed for Ubuntu:
+set t_Co=16 
+let g:solarized_termtrans=1
 let g:solarized_termcolors=256
+set background=dark
 colorscheme solarized
 set hlsearch
-highlight Search cterm=underline
+highlight Search term=underline cterm=underline
 " }
 " Functional {
 set number
 syntax on
-" }
+" }}}
 
 " === EDITING =============================================================
 " Indentation {
-filetype plugin indent on
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -31,15 +32,17 @@ let mapleader=","
 noremap <C-j> 10j
 noremap <C-k> 10k 
 " Quicker access to buffers:
-nnoremap <Leader>b :buffers<CR>:buffer<Space> 
+noremap <Leader>b :buffers<CR>:buffer<Space>
 " Stop pestering me to save when moving between buffers:
-set hidden 
+set hidden
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 " }
 
 " === BAD HABITS ==========================================================
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+nnoremap <Up> <ESC>
+nnoremap <Down> <ESC>
+nnoremap <Left> <ESC>
+nnoremap <Right> <ESC>
 
 
